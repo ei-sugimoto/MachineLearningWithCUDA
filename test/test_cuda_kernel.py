@@ -15,9 +15,8 @@ def gpu_sqrt_kernel(x: np.ndarray, out: np.ndarray):
         out[idx] = math.sqrt(x[idx])
 
 
-threads_per_block = 256
-blocks_per_grid = (a.size + (threads_per_block - 1)) // threads_per_block
-gpu_sqrt_kernel[blocks_per_grid, threads_per_block](a, out)  # type: ignore
-
-print(a)
-print(out)
+def test_gpu_sqrt():
+    threads_per_block = 256
+    blocks_per_grid = (a.size + (threads_per_block - 1)) // threads_per_block
+    gpu_sqrt_kernel[blocks_per_grid, threads_per_block](a, out)  # type: ignore
+    assert np.allclose(out, np.sqrt(a))
