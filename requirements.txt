@@ -166,7 +166,7 @@ pynvml @ file:///rapids/pynvml-11.4.1-py3-none-any.whl#sha256=d27be542cd9d06558d
 pyparsing==3.1.2
 pytest==8.0.2
 pytest-flakefinder==1.1.0
-pytest-rerunfailures==13.0
+pytest-rerunfailures==14.0
 pytest-shard==0.1.2
 pytest-xdist==3.5.0
 python-dateutil==2.9.0.post0
