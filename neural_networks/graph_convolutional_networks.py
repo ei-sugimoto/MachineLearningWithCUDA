@@ -2,31 +2,34 @@ from typing import TYPE_CHECKING
 
 import torch
 
+from class_timer import control_timer
+
 if TYPE_CHECKING:
     from torch_geometric.data import Data  # type: ignore
 else:
     from torch_geometric.data import Data
 
-# ノード
-src = [0, 1, 2]  # 送信側
-dst = [1, 2, 1]  # 受信側
 
-# エッジ
-edge_index = torch.tensor([src, dst], dtype=torch.long)
+def graph_convolutional_networks():
 
-# ノードの特徴量
-x0 = [1, 2]
-x1 = [3, 4]
-x2 = [5, 6]
-x = torch.tensor([x0, x1, x2], dtype=torch.float)
+    src = [0, 1, 2]
+    dst = [1, 2, 1]
 
-# ラベル
-y0 = [1]
-y1 = [0]
-y2 = [1]
-y = torch.tensor([y0, y1, y2], dtype=torch.float)
+    edge_index = torch.tensor([src, dst], dtype=torch.half)
 
-data = Data(x=x, y=y, edge_index=edge_index)
+    x0 = [1, 2]
+    x1 = [3, 4]
+    x2 = [5, 6]
+    x = torch.tensor([x0, x1, x2], dtype=torch.half)
+
+    y0 = [1]
+    y1 = [0]
+    y2 = [1]
+    y = torch.tensor([y0, y1, y2], dtype=torch.half)
+
+    data = Data(x=x, y=y, edge_index=edge_index)
+
+    return data
 
 
 def check_graph(data):
@@ -46,4 +49,10 @@ def check_graph(data):
     print(data["edge_index"])
 
 
+timer = control_timer()
+
+timer.start()
+data = graph_convolutional_networks()
+timer.end()
+print("実行時間:", timer.get_time() * 10**3, "ms")
 check_graph(data)

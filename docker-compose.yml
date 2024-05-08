@@ -3,9 +3,10 @@ services:
   pytouchwithcuda:
     build: .
     container_name: pytouchwithcuda
-    command: bash -c "nvidia-smi && tail -f /dev/null"
+    command: bash -c "nvidia-smi  && tail -f /dev/null"
     runtime: nvidia
     tty: true
     volumes:
       - .:/src
     shm_size: '8gb'
+    working_dir: /src

@@ -220,6 +220,7 @@ tomli==2.0.1
 toolz @ file:///rapids/toolz-0.12.1-py3-none-any.whl#sha256=d22731364c07d72eea0a0ad45bafb2c2937ab6fd38a3507bf55eae8744aa7d85
 torch @ file:///opt/transfer/torch-2.3.0a0%2B40ec155e58.nv24.3-cp310-cp310-linux_x86_64.whl#sha256=5230e3e37d2347e82daa6e1ccc2a5eeb9d8d673206f72d811339ad410d1596ad
 torch-tensorrt @ file:///opt/pytorch/torch_tensorrt/dist/torch_tensorrt-2.3.0a0-cp310-cp310-linux_x86_64.whl#sha256=905a9df8a2a360ac719ed8ff72c14fb6e3f807e60f5652025ad382ef08d009b7
+torch_geometric==2.5.3
 torchdata @ file:///opt/pytorch/data
 torchtext @ file:///opt/pytorch/text
 torchvision @ file:///opt/pytorch/vision
