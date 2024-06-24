@@ -21,7 +21,7 @@ charset-normalizer==3.3.2
 click==8.1.7
 cloudpathlib==0.16.0
 cloudpickle @ file:///rapids/cloudpickle-3.0.0-py3-none-any.whl#sha256=246ee7d0c295602a036e86369c77fecda4ab17b506496730f2f576d9016fd9c7
-cmake==3.28.3
+cmake==3.29.6
 comm==0.2.1
 confection==0.1.4
 contourpy==1.2.0
